@@ -1,0 +1,828 @@
+{
+  "name": "Quotes to Scrape",
+  "url": "https://quotes.toscrape.com",
+  "children": [
+    {
+      "name": "Quotes to Scrape",
+      "url": "https://quotes.toscrape.com/",
+      "children": [
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Albert-Einstein",
+          "children": [
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/login",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Andre-Gide",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Eleanor-Roosevelt",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/J-K-Rowling",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Jane-Austen",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Marilyn-Monroe",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Steve-Martin",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/author/Thomas-A-Edison",
+          "children": []
+        },
+        {
+          "name": "Quotes to Scrape",
+          "url": "https://quotes.toscrape.com/page/2",
+          "children": [
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Allen-Saunders",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Bob-Marley",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Douglas-Adams",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Dr-Seuss",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Elie-Wiesel",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Friedrich-Nietzsche",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/author/Mark-Twain",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/page/1",
+              "children": [
+                {
+                  "name": "Quotes to Scrape",
+                  "url": "https://quotes.toscrape.com/tag/abilities/page/1",
+                  "children": [
+                    {
+                      "name": "Quotes to Scrape",
+                      "url": "https://quotes.toscrape.com/tag/books",
+                      "children": [
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/author/C-S-Lewis",
+                          "children": []
+                        },
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/author/Ernest-Hemingway",
+                          "children": []
+                        },
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/author/Haruki-Murakami",
+                          "children": []
+                        },
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/author/J-D-Salinger",
+                          "children": []
+                        },
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/author/Jorge-Luis-Borges",
+                          "children": []
+                        },
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/author/Madeleine-LEngle",
+                          "children": []
+                        },
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/tag/aliteracy/page/1",
+                          "children": [
+                            {
+                              "name": "Quotes to Scrape",
+                              "url": "https://quotes.toscrape.com/tag/books/page/1",
+                              "children": [
+                                {
+                                  "name": "Quotes to Scrape",
+                                  "url": "https://quotes.toscrape.com/tag/authors/page/1",
+                                  "children": [
+                                    {
+                                      "name": "Quotes to Scrape",
+                                      "url": "https://quotes.toscrape.com/tag/friends",
+                                      "children": [
+                                        {
+                                          "name": "Quotes to Scrape",
+                                          "url": "https://quotes.toscrape.com/tag/contentment/page/1",
+                                          "children": [
+                                            {
+                                              "name": "Quotes to Scrape",
+                                              "url": "https://quotes.toscrape.com/tag/friends/page/1",
+                                              "children": [
+                                                {
+                                                  "name": "Quotes to Scrape",
+                                                  "url": "https://quotes.toscrape.com/tag/courage/page/1",
+                                                  "children": [
+                                                    {
+                                                      "name": "Quotes to Scrape",
+                                                      "url": "https://quotes.toscrape.com/tag/friendship",
+                                                      "children": [
+                                                        {
+                                                          "name": "Quotes to Scrape",
+                                                          "url": "https://quotes.toscrape.com/author/Alfred-Tennyson",
+                                                          "children": []
+                                                        },
+                                                        {
+                                                          "name": "Quotes to Scrape",
+                                                          "url": "https://quotes.toscrape.com/tag/friendship/page/1",
+                                                          "children": [
+                                                            {
+                                                              "name": "Quotes to Scrape",
+                                                              "url": "https://quotes.toscrape.com/tag/humor",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/Charles-Bukowski",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/Charles-M-Schulz",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/Garrison-Keillor",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/George-Carlin",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/Jim-Henson",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/Suzanne-Collins",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/author/Terry-Pratchett",
+                                                                  "children": []
+                                                                },
+                                                                {
+                                                                  "name": "Quotes to Scrape",
+                                                                  "url": "https://quotes.toscrape.com/tag/chocolate/page/1",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Quotes to Scrape",
+                                                                      "url": "https://quotes.toscrape.com/tag/food/page/1",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Quotes to Scrape",
+                                                                          "url": "https://quotes.toscrape.com/tag/humor/page/1",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Quotes to Scrape",
+                                                                              "url": "https://quotes.toscrape.com/tag/classic/page/1",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Quotes to Scrape",
+                                                                                  "url": "https://quotes.toscrape.com/tag/inspirational",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "name": "Quotes to Scrape",
+                                                                                      "url": "https://quotes.toscrape.com/author/George-Eliot",
+                                                                                      "children": []
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Quotes to Scrape",
+                                                                                      "url": "https://quotes.toscrape.com/author/Helen-Keller",
+                                                                                      "children": []
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Quotes to Scrape",
+                                                                                      "url": "https://quotes.toscrape.com/author/Martin-Luther-King-Jr",
+                                                                                      "children": []
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Quotes to Scrape",
+                                                                                      "url": "https://quotes.toscrape.com/tag/activism/page/1",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "name": "Quotes to Scrape",
+                                                                                          "url": "https://quotes.toscrape.com/tag/apathy/page/1",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "name": "Quotes to Scrape",
+                                                                                              "url": "https://quotes.toscrape.com/tag/hate/page/1",
+                                                                                              "children": [
+                                                                                                {
+                                                                                                  "name": "Quotes to Scrape",
+                                                                                                  "url": "https://quotes.toscrape.com/tag/indifference/page/1",
+                                                                                                  "children": [
+                                                                                                    {
+                                                                                                      "name": "Quotes to Scrape",
+                                                                                                      "url": "https://quotes.toscrape.com/tag/inspirational/page/1",
+                                                                                                      "children": [
+                                                                                                        {
+                                                                                                          "name": "Quotes to Scrape",
+                                                                                                          "url": "https://quotes.toscrape.com/tag/be-yourself/page/1",
+                                                                                                          "children": [
+                                                                                                            {
+                                                                                                              "name": "Quotes to Scrape",
+                                                                                                              "url": "https://quotes.toscrape.com/tag/life",
+                                                                                                              "children": [
+                                                                                                                {
+                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                  "url": "https://quotes.toscrape.com/author/George-Bernard-Shaw",
+                                                                                                                  "children": []
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                  "url": "https://quotes.toscrape.com/author/Ralph-Waldo-Emerson",
+                                                                                                                  "children": []
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                  "url": "https://quotes.toscrape.com/tag/comedy/page/1",
+                                                                                                                  "children": [
+                                                                                                                    {
+                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                      "url": "https://quotes.toscrape.com/tag/life/page/1",
+                                                                                                                      "children": [
+                                                                                                                        {
+                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                          "url": "https://quotes.toscrape.com/tag/fate/page/1",
+                                                                                                                          "children": [
+                                                                                                                            {
+                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                              "url": "https://quotes.toscrape.com/tag/love",
+                                                                                                                              "children": [
+                                                                                                                                {
+                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                  "url": "https://quotes.toscrape.com/author/James-Baldwin",
+                                                                                                                                  "children": []
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                  "url": "https://quotes.toscrape.com/author/Pablo-Neruda",
+                                                                                                                                  "children": []
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                  "url": "https://quotes.toscrape.com/tag/girls/page/1",
+                                                                                                                                  "children": [
+                                                                                                                                    {
+                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                      "url": "https://quotes.toscrape.com/tag/love/page/1",
+                                                                                                                                      "children": [
+                                                                                                                                        {
+                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                          "url": "https://quotes.toscrape.com/tag/heartbreak/page/1",
+                                                                                                                                          "children": [
+                                                                                                                                            {
+                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                              "url": "https://quotes.toscrape.com/tag/reading",
+                                                                                                                                              "children": [
+                                                                                                                                                {
+                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                  "url": "https://quotes.toscrape.com/author/George-R-R-Martin",
+                                                                                                                                                  "children": []
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                  "url": "https://quotes.toscrape.com/author/William-Nicholson",
+                                                                                                                                                  "children": []
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/learning/page/1",
+                                                                                                                                                  "children": [
+                                                                                                                                                    {
+                                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                                      "url": "https://quotes.toscrape.com/tag/reading/page/1",
+                                                                                                                                                      "children": [
+                                                                                                                                                        {
+                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/library/page/1",
+                                                                                                                                                          "children": [
+                                                                                                                                                            {
+                                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                                              "url": "https://quotes.toscrape.com/tag/simile",
+                                                                                                                                                              "children": [
+                                                                                                                                                                {
+                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                  "url": "https://quotes.toscrape.com/author/Stephenie-Meyer",
+                                                                                                                                                                  "children": []
+                                                                                                                                                                },
+                                                                                                                                                                {
+                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/drug/page/1",
+                                                                                                                                                                  "children": [
+                                                                                                                                                                    {
+                                                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                                                      "url": "https://quotes.toscrape.com/tag/romance/page/1",
+                                                                                                                                                                      "children": [
+                                                                                                                                                                        {
+                                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/simile/page/1",
+                                                                                                                                                                          "children": [
+                                                                                                                                                                            {
+                                                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                                                              "url": "https://quotes.toscrape.com/tag/obvious/page/1",
+                                                                                                                                                                              "children": [
+                                                                                                                                                                                {
+                                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/truth",
+                                                                                                                                                                                  "children": [
+                                                                                                                                                                                    {
+                                                                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                                                                      "url": "https://quotes.toscrape.com/tag/insanity/page/1",
+                                                                                                                                                                                      "children": [
+                                                                                                                                                                                        {
+                                                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/lies/page/1",
+                                                                                                                                                                                          "children": [
+                                                                                                                                                                                            {
+                                                                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                                                                              "url": "https://quotes.toscrape.com/tag/lying/page/1",
+                                                                                                                                                                                              "children": [
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/self-indulgence/page/1",
+                                                                                                                                                                                                  "children": [
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                                                                                      "url": "https://quotes.toscrape.com/tag/truth/page/1",
+                                                                                                                                                                                                      "children": [
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/misattributed-mark-twain/page/1",
+                                                                                                                                                                                                          "children": []
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                      ]
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                  ]
+                                                                                                                                                                                                }
+                                                                                                                                                                                              ]
+                                                                                                                                                                                            }
+                                                                                                                                                                                          ]
+                                                                                                                                                                                        }
+                                                                                                                                                                                      ]
+                                                                                                                                                                                    }
+                                                                                                                                                                                  ]
+                                                                                                                                                                                }
+                                                                                                                                                                              ]
+                                                                                                                                                                            }
+                                                                                                                                                                          ]
+                                                                                                                                                                        }
+                                                                                                                                                                      ]
+                                                                                                                                                                    }
+                                                                                                                                                                  ]
+                                                                                                                                                                }
+                                                                                                                                                              ]
+                                                                                                                                                            }
+                                                                                                                                                          ]
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/literature/page/1",
+                                                                                                                                                          "children": [
+                                                                                                                                                            {
+                                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                                              "url": "https://quotes.toscrape.com/tag/writing/page/1",
+                                                                                                                                                              "children": [
+                                                                                                                                                                {
+                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/children/page/1",
+                                                                                                                                                                  "children": [
+                                                                                                                                                                    {
+                                                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                                                      "url": "https://quotes.toscrape.com/tag/difficult/page/1",
+                                                                                                                                                                      "children": [
+                                                                                                                                                                        {
+                                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/grown-ups/page/1",
+                                                                                                                                                                          "children": [
+                                                                                                                                                                            {
+                                                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                                                              "url": "https://quotes.toscrape.com/tag/write/page/1",
+                                                                                                                                                                              "children": [
+                                                                                                                                                                                {
+                                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/writers/page/1",
+                                                                                                                                                                                  "children": []
+                                                                                                                                                                                }
+                                                                                                                                                                              ]
+                                                                                                                                                                            }
+                                                                                                                                                                          ]
+                                                                                                                                                                        }
+                                                                                                                                                                      ]
+                                                                                                                                                                    }
+                                                                                                                                                                  ]
+                                                                                                                                                                }
+                                                                                                                                                              ]
+                                                                                                                                                            }
+                                                                                                                                                          ]
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/misattributed-to-c-s-lewis/page/1",
+                                                                                                                                                          "children": []
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/read/page/1",
+                                                                                                                                                          "children": [
+                                                                                                                                                            {
+                                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                                              "url": "https://quotes.toscrape.com/tag/readers/page/1",
+                                                                                                                                                              "children": [
+                                                                                                                                                                {
+                                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/reading-books/page/1",
+                                                                                                                                                                  "children": []
+                                                                                                                                                                }
+                                                                                                                                                              ]
+                                                                                                                                                            }
+                                                                                                                                                          ]
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/seuss/page/1",
+                                                                                                                                                          "children": []
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                                          "url": "https://quotes.toscrape.com/tag/tea/page/1",
+                                                                                                                                                          "children": []
+                                                                                                                                                        }
+                                                                                                                                                      ]
+                                                                                                                                                    }
+                                                                                                                                                  ]
+                                                                                                                                                }
+                                                                                                                                              ]
+                                                                                                                                            },
+                                                                                                                                            {
+                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                              "url": "https://quotes.toscrape.com/tag/sisters/page/1",
+                                                                                                                                              "children": []
+                                                                                                                                            }
+                                                                                                                                          ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                          "url": "https://quotes.toscrape.com/tag/lack-of-friendship/page/1",
+                                                                                                                                          "children": [
+                                                                                                                                            {
+                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                              "url": "https://quotes.toscrape.com/tag/lack-of-love/page/1",
+                                                                                                                                              "children": [
+                                                                                                                                                {
+                                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                                  "url": "https://quotes.toscrape.com/tag/marriage/page/1",
+                                                                                                                                                  "children": [
+                                                                                                                                                    {
+                                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                                      "url": "https://quotes.toscrape.com/tag/unhappy-marriage/page/1",
+                                                                                                                                                      "children": []
+                                                                                                                                                    }
+                                                                                                                                                  ]
+                                                                                                                                                }
+                                                                                                                                              ]
+                                                                                                                                            }
+                                                                                                                                          ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                          "url": "https://quotes.toscrape.com/tag/love/page/2",
+                                                                                                                                          "children": []
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                          "url": "https://quotes.toscrape.com/tag/opposite/page/1",
+                                                                                                                                          "children": [
+                                                                                                                                            {
+                                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                                              "url": "https://quotes.toscrape.com/tag/philosophy/page/1",
+                                                                                                                                              "children": []
+                                                                                                                                            }
+                                                                                                                                          ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                                          "url": "https://quotes.toscrape.com/tag/poetry/page/1",
+                                                                                                                                          "children": []
+                                                                                                                                        }
+                                                                                                                                      ]
+                                                                                                                                    }
+                                                                                                                                  ]
+                                                                                                                                }
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                              "url": "https://quotes.toscrape.com/tag/misattributed-john-lennon/page/1",
+                                                                                                                              "children": [
+                                                                                                                                {
+                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                  "url": "https://quotes.toscrape.com/tag/planning/page/1",
+                                                                                                                                  "children": [
+                                                                                                                                    {
+                                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                                      "url": "https://quotes.toscrape.com/tag/plans/page/1",
+                                                                                                                                      "children": []
+                                                                                                                                    }
+                                                                                                                                  ]
+                                                                                                                                }
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                          "url": "https://quotes.toscrape.com/tag/life/page/2",
+                                                                                                                          "children": [
+                                                                                                                            {
+                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                              "url": "https://quotes.toscrape.com/tag/death/page/1",
+                                                                                                                              "children": []
+                                                                                                                            }
+                                                                                                                          ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                          "url": "https://quotes.toscrape.com/tag/live/page/1",
+                                                                                                                          "children": [
+                                                                                                                            {
+                                                                                                                              "name": "Quotes to Scrape",
+                                                                                                                              "url": "https://quotes.toscrape.com/tag/miracle/page/1",
+                                                                                                                              "children": [
+                                                                                                                                {
+                                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                                  "url": "https://quotes.toscrape.com/tag/miracles/page/1",
+                                                                                                                                  "children": []
+                                                                                                                                }
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                          "url": "https://quotes.toscrape.com/tag/navigation/page/1",
+                                                                                                                          "children": []
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                          "url": "https://quotes.toscrape.com/tag/regrets/page/1",
+                                                                                                                          "children": []
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                          "name": "Quotes to Scrape",
+                                                                                                                          "url": "https://quotes.toscrape.com/tag/yourself/page/1",
+                                                                                                                          "children": []
+                                                                                                                        }
+                                                                                                                      ]
+                                                                                                                    }
+                                                                                                                  ]
+                                                                                                                }
+                                                                                                              ]
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "name": "Quotes to Scrape",
+                                                                                                          "url": "https://quotes.toscrape.com/tag/edison/page/1",
+                                                                                                          "children": [
+                                                                                                            {
+                                                                                                              "name": "Quotes to Scrape",
+                                                                                                              "url": "https://quotes.toscrape.com/tag/failure/page/1",
+                                                                                                              "children": [
+                                                                                                                {
+                                                                                                                  "name": "Quotes to Scrape",
+                                                                                                                  "url": "https://quotes.toscrape.com/tag/paraphrased/page/1",
+                                                                                                                  "children": [
+                                                                                                                    {
+                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                      "url": "https://quotes.toscrape.com/author/Mother-Teresa",
+                                                                                                                      "children": []
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                      "name": "Quotes to Scrape",
+                                                                                                                      "url": "https://quotes.toscrape.com/tag/misattributed-to-mother-teresa/page/1",
+                                                                                                                      "children": []
+                                                                                                                    }
+                                                                                                                  ]
+                                                                                                                }
+                                                                                                              ]
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "name": "Quotes to Scrape",
+                                                                                                          "url": "https://quotes.toscrape.com/tag/hope/page/1",
+                                                                                                          "children": []
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "name": "Quotes to Scrape",
+                                                                                                          "url": "https://quotes.toscrape.com/tag/inspirational/page/2",
+                                                                                                          "children": []
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Quotes to Scrape",
+                                                                              "url": "https://quotes.toscrape.com/tag/humor/page/2",
+                                                                              "children": []
+                                                                            },
+                                                                            {
+                                                                              "name": "Quotes to Scrape",
+                                                                              "url": "https://quotes.toscrape.com/tag/open-mind/page/1",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Quotes to Scrape",
+                                                                                  "url": "https://quotes.toscrape.com/tag/thinking/page/1",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "name": "Quotes to Scrape",
+                                                                                      "url": "https://quotes.toscrape.com/tag/change/page/1",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "name": "Quotes to Scrape",
+                                                                                          "url": "https://quotes.toscrape.com/tag/deep-thoughts/page/1",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "name": "Quotes to Scrape",
+                                                                                              "url": "https://quotes.toscrape.com/tag/world/page/1",
+                                                                                              "children": []
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Quotes to Scrape",
+                                                                              "url": "https://quotes.toscrape.com/tag/religion/page/1",
+                                                                              "children": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Quotes to Scrape",
+                                                  "url": "https://quotes.toscrape.com/tag/novelist-quotes/page/1",
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Quotes to Scrape",
+                                  "url": "https://quotes.toscrape.com/tag/books/page/2",
+                                  "children": []
+                                },
+                                {
+                                  "name": "Quotes to Scrape",
+                                  "url": "https://quotes.toscrape.com/tag/thought/page/1",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Quotes to Scrape",
+                      "url": "https://quotes.toscrape.com/tag/choices/page/1",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Quotes to Scrape",
+                  "url": "https://quotes.toscrape.com/tag/adulthood/page/1",
+                  "children": [
+                    {
+                      "name": "Quotes to Scrape",
+                      "url": "https://quotes.toscrape.com/tag/success/page/1",
+                      "children": [
+                        {
+                          "name": "Quotes to Scrape",
+                          "url": "https://quotes.toscrape.com/tag/value/page/1",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Quotes to Scrape",
+                  "url": "https://quotes.toscrape.com/tag/misattributed-eleanor-roosevelt/page/1",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/page/3",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/tag/fantasy/page/1",
+              "children": []
+            },
+            {
+              "name": "Quotes to Scrape",
+              "url": "https://quotes.toscrape.com/tag/simplicity/page/1",
+              "children": [
+                {
+                  "name": "Quotes to Scrape",
+                  "url": "https://quotes.toscrape.com/tag/understand/page/1",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - quotes.toscrape.com</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .header {
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 1.8em;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: #8892b0;
+            margin-top: 5px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        
+        .stat-label {
+            font-size: 0.85em;
+            color: #8892b0;
+        }
+        
+        #tree-container {
+            width: 100%;
+            height: calc(100vh - 140px);
+            overflow: auto;
+        }
+        
+        .node circle {
+            fill: #00d4ff;
+            stroke: #fff;
+            stroke-width: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .node circle:hover {
+            fill: #00ff88;
+            transform: scale(1.2);
+        }
+        
+        .node text {
+            font-size: 12px;
+            fill: #fff;
+        }
+        
+        .link {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.3);
+            stroke-width: 1.5px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #00d4ff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            max-width: 400px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .tooltip-title {
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .tooltip-url {
+            color: #8892b0;
+            word-break: break-all;
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: rgba(0, 212, 255, 0.2);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .control-btn:hover {
+            background: #00d4ff;
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ Site Map: quotes.toscrape.com</h1>
+        <p class="subtitle">Interactive visualization of website structure</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="total-pages">0</div>
+                <div class="stat-label">Total Pages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="max-depth">0</div>
+                <div class="stat-label">Max Depth</div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tree-container"></div>
+    
+    <div class="tooltip" id="tooltip" style="display: none;"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="expandAll()">Expand All</button>
+        <button class="control-btn" onclick="collapseAll()">Collapse All</button>
+        <button class="control-btn" onclick="resetZoom()">Reset Zoom</button>
+    </div>
+    
+    <script>
+        const treeData = {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Albert-Einstein", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/login", "children": []}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Andre-Gide", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Eleanor-Roosevelt", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/J-K-Rowling", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Jane-Austen", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Marilyn-Monroe", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Steve-Martin", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Thomas-A-Edison", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/page/2", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Allen-Saunders", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Bob-Marley", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Douglas-Adams", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Dr-Seuss", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Elie-Wiesel", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Friedrich-Nietzsche", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Mark-Twain", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/abilities/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/books", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/C-S-Lewis", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Ernest-Hemingway", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Haruki-Murakami", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/J-D-Salinger", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Jorge-Luis-Borges", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Madeleine-LEngle", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/aliteracy/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/books/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/authors/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/friends", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/contentment/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/friends/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/courage/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/friendship", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Alfred-Tennyson", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/friendship/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/humor", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Charles-Bukowski", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Charles-M-Schulz", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Garrison-Keillor", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/George-Carlin", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Jim-Henson", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Suzanne-Collins", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Terry-Pratchett", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/chocolate/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/food/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/humor/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/classic/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/inspirational", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/George-Eliot", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Helen-Keller", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Martin-Luther-King-Jr", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/activism/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/apathy/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/hate/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/indifference/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/inspirational/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/be-yourself/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/life", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/George-Bernard-Shaw", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Ralph-Waldo-Emerson", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/comedy/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/life/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/fate/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/love", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/James-Baldwin", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Pablo-Neruda", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/girls/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/love/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/heartbreak/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/reading", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/George-R-R-Martin", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/William-Nicholson", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/learning/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/reading/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/library/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/simile", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Stephenie-Meyer", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/drug/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/romance/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/simile/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/obvious/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/truth", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/insanity/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/lies/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/lying/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/self-indulgence/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/truth/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/misattributed-mark-twain/page/1", "children": []}]}]}]}]}]}]}]}]}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/literature/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/writing/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/children/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/difficult/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/grown-ups/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/write/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/writers/page/1", "children": []}]}]}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/misattributed-to-c-s-lewis/page/1", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/read/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/readers/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/reading-books/page/1", "children": []}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/seuss/page/1", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/tea/page/1", "children": []}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/sisters/page/1", "children": []}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/lack-of-friendship/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/lack-of-love/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/marriage/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/unhappy-marriage/page/1", "children": []}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/love/page/2", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/opposite/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/philosophy/page/1", "children": []}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/poetry/page/1", "children": []}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/misattributed-john-lennon/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/planning/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/plans/page/1", "children": []}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/life/page/2", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/death/page/1", "children": []}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/live/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/miracle/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/miracles/page/1", "children": []}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/navigation/page/1", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/regrets/page/1", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/yourself/page/1", "children": []}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/edison/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/failure/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/paraphrased/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/author/Mother-Teresa", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/misattributed-to-mother-teresa/page/1", "children": []}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/hope/page/1", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/inspirational/page/2", "children": []}]}]}]}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/humor/page/2", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/open-mind/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/thinking/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/change/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/deep-thoughts/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/world/page/1", "children": []}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/religion/page/1", "children": []}]}]}]}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/novelist-quotes/page/1", "children": []}]}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/books/page/2", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/thought/page/1", "children": []}]}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/choices/page/1", "children": []}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/adulthood/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/success/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/value/page/1", "children": []}]}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/misattributed-eleanor-roosevelt/page/1", "children": []}]}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/page/3", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/fantasy/page/1", "children": []}, {"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/simplicity/page/1", "children": [{"name": "Quotes to Scrape", "url": "https://quotes.toscrape.com/tag/understand/page/1", "children": []}]}]}]}]};
+        
+        // Count total nodes and max depth
+        function countNodes(node) {
+            let count = 1;
+            if (node.children) {
+                node.children.forEach(child => count += countNodes(child));
+            }
+            return count;
+        }
+        
+        function getMaxDepth(node, depth = 0) {
+            if (!node.children || node.children.length === 0) return depth;
+            return Math.max(...node.children.map(child => getMaxDepth(child, depth + 1)));
+        }
+        
+        document.getElementById('total-pages').textContent = countNodes(treeData);
+        document.getElementById('max-depth').textContent = getMaxDepth(treeData);
+        
+        // Set up the tree visualization
+        const container = document.getElementById('tree-container');
+        const width = Math.max(container.clientWidth, 1200);
+        const height = Math.max(container.clientHeight, 800);
+        
+        const svg = d3.select('#tree-container')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+        
+        const g = svg.append('g')
+            .attr('transform', 'translate(100, 50)');
+        
+        // Enable zoom
+        const zoom = d3.zoom()
+            .scaleExtent([0.1, 3])
+            .on('zoom', (event) => g.attr('transform', event.transform));
+        
+        svg.call(zoom);
+        
+        // Create tree layout
+        const treeLayout = d3.tree()
+            .size([height - 100, width - 200]);
+        
+        const root = d3.hierarchy(treeData);
+        
+        // Store original children for expand/collapse
+        root.descendants().forEach(d => {
+            d._children = d.children;
+        });
+        
+        function update(source) {
+            const duration = 500;
+            
+            treeLayout(root);
+            
+            // Nodes
+            const nodes = g.selectAll('.node')
+                .data(root.descendants(), d => d.data.url);
+            
+            const nodeEnter = nodes.enter()
+                .append('g')
+                .attr('class', 'node')
+                .attr('transform', d => `translate(${source.y0 || d.y},${source.x0 || d.x})`)
+                .on('click', (event, d) => {
+                    if (d.children) {
+                        d._children = d.children;
+                        d.children = null;
+                    } else {
+                        d.children = d._children;
+                    }
+                    update(d);
+                })
+                .on('mouseover', showTooltip)
+                .on('mouseout', hideTooltip);
+            
+            nodeEnter.append('circle')
+                .attr('r', 6);
+            
+            nodeEnter.append('text')
+                .attr('dy', 4)
+                .attr('x', d => d.children || d._children ? -12 : 12)
+                .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+                .text(d => truncate(d.data.name, 30));
+            
+            const nodeUpdate = nodeEnter.merge(nodes);
+            
+            nodeUpdate.transition()
+                .duration(duration)
+                .attr('transform', d => `translate(${d.y},${d.x})`);
+            
+            nodeUpdate.select('circle')
+                .attr('fill', d => d._children && !d.children ? '#f5576c' : '#00d4ff');
+            
+            nodes.exit()
+                .transition()
+                .duration(duration)
+                .attr('transform', d => `translate(${source.y},${source.x})`)
+                .remove();
+            
+            // Links
+            const links = g.selectAll('.link')
+                .data(root.links(), d => d.target.data.url);
+            
+            const linkEnter = links.enter()
+                .insert('path', 'g')
+                .attr('class', 'link')
+                .attr('d', d3.linkHorizontal()
+                    .x(d => source.y0 || d.y)
+                    .y(d => source.x0 || d.x));
+            
+            linkEnter.merge(links)
+                .transition()
+                .duration(duration)
+                .attr('d', d3.linkHorizontal()
+                    .x(d => d.y)
+                    .y(d => d.x));
+            
+            links.exit()
+                .transition()
+                .duration(duration)
+                .attr('d', d3.linkHorizontal()
+                    .x(d => source.y)
+                    .y(d => source.x))
+                .remove();
+            
+            // Store positions for transitions
+            root.descendants().forEach(d => {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+        }
+        
+        function truncate(str, n) {
+            return str.length > n ? str.substr(0, n - 1) + '...' : str;
+        }
+        
+        function showTooltip(event, d) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <div class="tooltip-title">${d.data.name}</div>
+                <div class="tooltip-url">${d.data.url}</div>
+            `;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (event.pageX + 15) + 'px';
+            tooltip.style.top = (event.pageY - 10) + 'px';
+        }
+        
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+        
+        function expandAll() {
+            root.descendants().forEach(d => {
+                if (d._children) {
+                    d.children = d._children;
+                }
+            });
+            update(root);
+        }
+        
+        function collapseAll() {
+            root.descendants().forEach(d => {
+                if (d.depth > 0 && d.children) {
+                    d._children = d.children;
+                    d.children = null;
+                }
+            });
+            update(root);
+        }
+        
+        function resetZoom() {
+            svg.transition()
+                .duration(500)
+                .call(zoom.transform, d3.zoomIdentity.translate(100, 50));
+        }
+        
+        // Initial render
+        update(root);
+        
+        // Center the tree initially
+        svg.call(zoom.transform, d3.zoomIdentity.translate(100, height / 4).scale(0.8));
+    </script>
+</body>
+</html>
