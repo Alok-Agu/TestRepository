@@ -27,21 +27,69 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 from pydantic import Field, SecretStr
+import logging
 
-from openhands.sdk import (
-    LLM,
-    Action,
-    Agent,
-    Conversation,
-    ImageContent,
-    Observation,
-    TextContent,
-    ToolDefinition,
-    get_logger,
-)
-from openhands.sdk.tool import Tool, ToolExecutor, register_tool
-from openhands.tools.file_editor import FileEditorTool
-from openhands.tools.terminal import TerminalTool
+# Try importing optional OpenHands SDK pieces; if unavailable, provide lightweight
+# stubs so the crawler can still run standalone.
+try:
+    from openhands.sdk import (
+        LLM,
+        Action,
+        Agent,
+        Conversation,
+        ImageContent,
+        Observation,
+        TextContent,
+        ToolDefinition,
+        get_logger,
+    )
+    from openhands.sdk.tool import Tool, ToolExecutor, register_tool
+    from openhands.tools.file_editor import FileEditorTool
+    from openhands.tools.terminal import TerminalTool
+    OPENHANDS_AVAILABLE = True
+except Exception:
+    OPENHANDS_AVAILABLE = False
+
+    # Minimal replacements so the rest of the script can execute without the SDK.
+    def get_logger(name: str):
+        return logging.getLogger(name)
+
+    class Action:  # pragma: no cover - lightweight stub
+        pass
+
+    class Observation:  # pragma: no cover - lightweight stub
+        pass
+
+    class TextContent:  # pragma: no cover - simple container used by Observation
+        def __init__(self, text: str = ""):
+            self.text = text
+
+    class ImageContent:  # pragma: no cover - placeholder
+        def __init__(self, url: str = ""):
+            self.url = url
+
+    class ToolDefinition:  # pragma: no cover
+        def __init__(self, **kwargs):
+            self.__dict__.update(kwargs)
+
+    class Tool:  # pragma: no cover
+        def __init__(self, name: str):
+            self.name = name
+
+    class ToolExecutor:  # pragma: no cover
+        # Allow using subscription syntax in type hints (ToolExecutor[Action, Obs])
+        def __class_getitem__(cls, item):
+            return cls
+
+    def register_tool(name, creator):
+        # No-op in standalone mode
+        return None
+
+    class FileEditorTool:  # pragma: no cover
+        name = "FileEditorTool"
+
+    class TerminalTool:  # pragma: no cover
+        name = "TerminalTool"
 
 logger = get_logger(__name__)
 
@@ -761,48 +809,51 @@ Environment Variables:
     
     args = parser.parse_args()
     
-    # Validate environment
-    api_key = os.getenv("LLM_API_KEY")
-    if not api_key:
-        print("❌ Error: LLM_API_KEY environment variable is not set.")
-        print("   Please set it with: export LLM_API_KEY='your-api-key'")
-        sys.exit(1)
-    
-    model = os.getenv("LLM_BASE_MODEL", "openhands/claude-sonnet-4-5-20250929")
-    base_url = os.getenv("LLM_BASE_URL")
-    
+    # If OpenHands SDK is available, prefer using the Agent flow; otherwise
+    # run the crawler directly so the script remains runnable in minimal
+    # environments (no external SDK required).
     print("=" * 60)
     print("🕷️  Website Crawler Agent")
     print("=" * 60)
     print(f"   URL: {args.url}")
     print(f"   Depth: {args.depth}")
-    print(f"   Model: {model}")
     print("=" * 60)
     print()
-    
-    # Configure LLM
-    llm = LLM(
-        model=model,
-        api_key=SecretStr(api_key),
-        base_url=base_url,
-    )
-    
-    # Set up tools
-    tools = [
-        Tool(name=CrawlWebsiteTool.name),
-        Tool(name=TerminalTool.name),
-        Tool(name=FileEditorTool.name),
-    ]
-    
-    # Create agent
-    agent = Agent(llm=llm, tools=tools)
-    
-    # Create conversation
+
     cwd = os.getcwd()
-    conversation = Conversation(agent=agent, workspace=cwd)
-    
-    # Send the crawl request
-    message = f"""Please crawl the website at {args.url} and create a visual sitemap.
+
+    if OPENHANDS_AVAILABLE:
+        # Validate environment for OpenHands usage
+        api_key = os.getenv("LLM_API_KEY")
+        if not api_key:
+            print("❌ Error: LLM_API_KEY environment variable is not set.")
+            print("   Please set it with: export LLM_API_KEY='your-api-key'")
+            sys.exit(1)
+
+        model = os.getenv("LLM_BASE_MODEL", "openhands/claude-sonnet-4-5-20250929")
+        base_url = os.getenv("LLM_BASE_URL")
+
+        print(f"   Model: {model}")
+
+        # Configure LLM and agent
+        llm = LLM(
+            model=model,
+            api_key=SecretStr(api_key),
+            base_url=base_url,
+        )
+
+        tools = [
+            Tool(name=CrawlWebsiteTool.name),
+            Tool(name=TerminalTool.name),
+            Tool(name=FileEditorTool.name),
+        ]
+
+        agent = Agent(llm=llm, tools=tools)
+
+        # Create conversation and let the agent run
+        conversation = Conversation(agent=agent, workspace=cwd)
+
+        message = f"""Please crawl the website at {args.url} and create a visual sitemap.
 
 Use the CrawlWebsiteTool with:
 - url: {args.url}
@@ -812,13 +863,28 @@ After crawling, let me know:
 1. How many pages were discovered
 2. The structure of the site
 3. Where the output files were saved"""
-    
-    conversation.send_message(message)
-    conversation.run()
-    
-    print("\n" + "=" * 60)
-    print("✅ Agent finished!")
-    print("=" * 60)
+
+        conversation.send_message(message)
+        conversation.run()
+
+        print("\n" + "=" * 60)
+        print("✅ Agent finished!")
+        print("=" * 60)
+    else:
+        # Standalone fallback: run the crawler executor directly
+        executor = CrawlWebsiteExecutor(output_dir=cwd)
+        action = CrawlWebsiteAction(url=args.url, max_depth=args.depth)
+        observation = executor(action)
+
+        # Print a short summary similar to the original Observation
+        print('\n' + '=' * 60)
+        print('✅ Crawl finished (standalone mode)')
+        print('=' * 60)
+        print(f"Domain: {observation.domain}")
+        print(f"Total pages: {observation.total_urls}")
+        if observation.output_file:
+            print(f"Output HTML: {observation.output_file}")
+        print('\n')
 
 
 if __name__ == "__main__":
